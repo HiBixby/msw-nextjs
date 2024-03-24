@@ -2,7 +2,6 @@
 import { http, HttpResponse } from "msw";
 
 export const handlers = [
-  // TODOLIST - GET
   http.get("/hello", () => {
     return HttpResponse.json(
       { text: "hello" },
