@@ -7,9 +7,6 @@ export const handlers = [
       { text: "hello" },
       {
         status: 200,
-        headers: {
-          "Content-Type": "application/json",
-        },
       }
     );
   }),
