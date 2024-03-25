@@ -1,4 +1,4 @@
-// src/mocks/index.ts
+// mocks/index.ts
 async function initMSW() {
   if (typeof window === "undefined") {
     const { server } = await import("./server");

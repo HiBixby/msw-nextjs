@@ -1,13 +1,12 @@
-import { initMSW } from "@/mocks";
 import { useEffect, useState } from "react";
 
 function MSWProvider({ children }: { children: React.ReactNode }) {
-  const mockingEnabled = !!process.env.NEXT_PUBLIC_API_MOCKING;
+  const mockingEnabled = process.env.NODE_ENV === "development";
   const [shouldRender, setShouldRender] = useState(!mockingEnabled);
 
   useEffect(() => {
     if (mockingEnabled) {
-      import("../mocks").then(async ({ initMSW }) => {
+      import(".").then(async ({ initMSW }) => {
         await initMSW();
         setShouldRender(true);
       });
